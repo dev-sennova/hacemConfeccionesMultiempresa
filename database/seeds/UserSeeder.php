@@ -38,33 +38,69 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Empresario',
-            'email' => 'empresario@gmail.com',
-            'password' => bcrypt('Empresario'),
+            'name' => 'George Olago',
+            'email' => 'golago@sena.edu.co',
+            'password' => bcrypt('golago@sena.edu.co'),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Luis',
-            'email' => 'lusuario@misena.edu.co',
-            'password' => bcrypt('Luis'),
+            'name' => 'Ricardo Colmenares',
+            'email' => 'rcolmenares@sena.edu.co',
+            'password' => bcrypt('rcolmenares@sena.edu.co'),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Empresario',
-            'email' => 'usuario@gmail.com',
-            'password' => bcrypt('Empresario'),
+            'name' => 'Domingo Neira',
+            'email' => 'dneira@sena.edu.co',
+            'password' => bcrypt('dneira@sena.edu.co'),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Silvia Proditexco',
-            'email' => 'silviagg@proditexco.com',
-            'password' => bcrypt('Proditexco'),
+            'name' => 'Alejandra Arias',
+            'email' => 'aariasd@sena.edu.co',
+            'password' => bcrypt('aariasd@sena.edu.co'),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Gerencia Proditexco',
-            'email' => 'gerencia@proditexco.com',
-            'password' => bcrypt('Proditexco'),
+            'name' => 'Sandra Milena Reyes',
+            'email' => 'smreyesi@sena.edu.co',
+            'password' => bcrypt('smreyesi@sena.edu.co'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Blanca Yanneth Murallas',
+            'email' => 'bmuralas@sena.edu.co',
+            'password' => bcrypt('bmuralas@sena.edu.co'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Yazmin Alicia Jaimes',
+            'email' => 'yjaimesf@sena.edu.co',
+            'password' => bcrypt('yjaimesf@sena.edu.co'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Fisher Yarely Torres',
+            'email' => 'fyrodrguez@sena.edu.co',
+            'password' => bcrypt('fyrodrguez@sena.edu.co'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Andrea Tatiana Ferreira',
+            'email' => 'atferreira@sena.edu.co',
+            'password' => bcrypt('atferreira@sena.edu.co'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Astrid Mariela Hernandez',
+            'email' => 'ahernandez@sena.edu.co',
+            'password' => bcrypt('ahernandez@sena.edu.co'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Claudia Castellanos',
+            'email' => 'ccastellanosr@sena.edu.co',
+            'password' => bcrypt('ccastellanosr@sena.edu.co'),
         ]);
 
     }
