@@ -83,6 +83,7 @@ class Hoja_De_CostosController extends Controller
             ELSE SUM(tb_concepto_cif.valor) END) as acumuladocif");
             $ciftotales = DB::table('tb_concepto_cif')
             ->where('tb_concepto_cif.idEmpresa','=',$idEmpresa)
+            ->where('tb_concepto_cif.estado','=',1)
             ->select($query3)
             ->get();
             foreach($ciftotales as $ciftotal){
@@ -95,6 +96,7 @@ class Hoja_De_CostosController extends Controller
             ELSE SUM(tb_maquinaria.depreciacionMensual) END) as acumuladomaquinaria");
             $totales = DB::table('tb_maquinaria')
             ->where('tb_maquinaria.idEmpresa','=',$idEmpresa)
+            ->where('tb_maquinaria.estado','=',1)
             ->select($query4)
             ->get();
             foreach($totales as $totalg){
@@ -173,6 +175,7 @@ class Hoja_De_CostosController extends Controller
             ELSE SUM(tb_maquinaria.depreciacionMensual) END) as acumuladomaquinaria");
             $totales = DB::table('tb_maquinaria')
             ->where('tb_maquinaria.idEmpresa','=',$idEmpresa)
+            ->where('tb_maquinaria.estado','=',1)
             ->select($query)
             ->get();
             foreach($totales as $totalg){
@@ -201,6 +204,7 @@ class Hoja_De_CostosController extends Controller
             ELSE SUM(tb_concepto_cif.valor) END) as acumuladocif");
             $ciftotales = DB::table('tb_concepto_cif')
             ->where('tb_concepto_cif.idEmpresa','=',$idEmpresa)
+            ->where('tb_concepto_cif.estado','=',1)
             ->select($query3)
             ->get();
             foreach($ciftotales as $ciftotal){
@@ -213,6 +217,7 @@ class Hoja_De_CostosController extends Controller
             ELSE SUM(tb_maquinaria.depreciacionMensual) END) as acumuladomaquinaria");
             $totales = DB::table('tb_maquinaria')
             ->where('tb_maquinaria.idEmpresa','=',$idEmpresa)
+            ->where('tb_maquinaria.estado','=',1)
             ->select($query4)
             ->get();
             foreach($totales as $totalg){
@@ -341,6 +346,7 @@ class Hoja_De_CostosController extends Controller
             ELSE SUM(tb_concepto_cif.valor) END) as acumuladocif");
             $ciftotales = DB::table('tb_concepto_cif')
             ->where('tb_concepto_cif.idEmpresa','=',$idEmpresa)
+            ->where('tb_concepto_cif.estado','=',1)
             ->select($query3)
             ->get();
             foreach($ciftotales as $ciftotal){
@@ -353,6 +359,7 @@ class Hoja_De_CostosController extends Controller
             ELSE SUM(tb_maquinaria.depreciacionMensual) END) as acumuladomaquinaria");
             $totales = DB::table('tb_maquinaria')
             ->where('tb_maquinaria.idEmpresa','=',$idEmpresa)
+            ->where('tb_maquinaria.estado','=',1)
             ->select($query4)
             ->get();
             foreach($totales as $totalg){
@@ -457,6 +464,7 @@ class Hoja_De_CostosController extends Controller
 
             $conceptos = Tb_concepto_cif::orderBy('id','desc')
             ->where('tb_concepto_cif.idEmpresa','=',$idEmpresa)
+            ->where('tb_concepto_cif.estado','=',1)
             ->get();
 
             //maquinaria
@@ -466,6 +474,7 @@ class Hoja_De_CostosController extends Controller
             ELSE SUM(tb_maquinaria.depreciacionMensual) END) as acumuladomaquinaria");
             $totales = DB::table('tb_maquinaria')
             ->where('tb_maquinaria.idEmpresa','=',$idEmpresa)
+            ->where('tb_maquinaria.estado','=',1)
             ->select($querydep)
             ->get();
             foreach($totales as $totalg){
@@ -570,6 +579,7 @@ public function unitarioTotalGen(Request $request)
     ELSE SUM(tb_concepto_cif.valor) END) as acumuladocif");
     $ciftotales = DB::table('tb_concepto_cif')
     ->where('tb_concepto_cif.idEmpresa','=',$idEmpresa)
+    ->where('tb_concepto_cif.estado','=',1)
     ->select($query3)
     ->get();
     foreach($ciftotales as $ciftotal){
@@ -582,6 +592,7 @@ public function unitarioTotalGen(Request $request)
     ELSE SUM(tb_maquinaria.depreciacionMensual) END) as acumuladomaquinaria");
     $totales = DB::table('tb_maquinaria')
     ->where('tb_maquinaria.idEmpresa','=',$idEmpresa)
+    ->where('tb_maquinaria.estado','=',1)
     ->select($query4)
     ->get();
     foreach($totales as $totalg){
@@ -646,6 +657,7 @@ public function hojaDetalleGen(Request $request)
 
     $conceptos = Tb_concepto_cif::orderBy('id','desc')
     ->where('tb_concepto_cif.idEmpresa','=',$idEmpresa)
+    ->where('tb_concepto_cif.estado','=',1)
     ->get();
 
     //maquinaria
@@ -655,6 +667,7 @@ public function hojaDetalleGen(Request $request)
     ELSE SUM(tb_maquinaria.depreciacionMensual) END) as acumuladomaquinaria");
     $totales = DB::table('tb_maquinaria')
     ->where('tb_maquinaria.idEmpresa','=',$idEmpresa)
+    ->where('tb_maquinaria.estado','=',1)
     ->select($querydep)
     ->get();
     foreach($totales as $totalg){
