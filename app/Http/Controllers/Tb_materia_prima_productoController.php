@@ -9,6 +9,7 @@ use App\Tb_kardex_almacen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Stmt\TryCatch;
 
 class Tb_materia_prima_productoController extends Controller
 {
@@ -192,20 +193,37 @@ class Tb_materia_prima_productoController extends Controller
         public function valorPrecioBase($id)
         { //DATOS de valor segun orden 2 5 y 6 traigo segun idmateria el valor promedio del kardex
             //if(!$request->ajax()) return redirect('/');
-            $valorMaterial = 0;
-            $preciomaterial = Tb_kardex_almacen::first()
-            ->select('tb_kardex_almacen.id','tb_kardex_almacen.precioSaldos')
-            ->where([
-                ['tb_kardex_almacen.idGestionMateria', '=', $id],
-                ['tb_kardex_almacen.precioSaldos', '>', '0'],
-            ]) //aca podria poner en el where que mirara que el valor no es cero y probar edit funciona
-            ->orderBy('tb_kardex_almacen.idGestionMateria','desc')
-            ->get();
+        //cambios multiempresa
+        foreach (Auth::user()->empresas as $empresa){
+            $idEmpresa=$empresa['id'];
+         }
+        //cambios multiempresa
 
-            foreach($preciomaterial as $totalg){
-                $id = $totalg->id;
-                $valorMaterial = $valorMaterial + $totalg->precioSaldos;
+            $valorMaterial = 0;
+
+            $countmaterial = Tb_kardex_almacen::where('tb_kardex_almacen.idGestionMateria', '=', $id)
+            ->where('tb_kardex_almacen.precioSaldos', '>', '0')
+            ->count();
+
+            if($countmaterial>0){
+                $preciomaterial = Tb_kardex_almacen::first()
+                ->where([
+                    ['tb_kardex_almacen.idGestionMateria', '=', $id],
+                    ['tb_kardex_almacen.precioSaldos', '>', '0'],
+                ]) //aca podria poner en el where que mirara que el valor no es cero y probar edit funciona
+                ->orderBy('tb_kardex_almacen.idGestionMateria','desc')
+                ->get();
+
+                foreach($preciomaterial as $totalg){
+                    $id = $totalg->id;
+                    $valorMaterial = $valorMaterial + $totalg->precioSaldos;
+                }
             }
+            else{
+                $valorMaterial = 0;
+            }
+
+
 
             if($valorMaterial>0){
                 $valores = Tb_gestion_materia_prima::join('tb_unidad_base','tb_gestion_materia_prima.idUnidadBase','=','tb_unidad_base.id')
