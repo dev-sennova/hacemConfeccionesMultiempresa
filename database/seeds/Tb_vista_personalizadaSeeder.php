@@ -157,5 +157,100 @@ class Tb_vista_personalizadaSeeder extends Seeder
             'idUser' => 9
         ]);
 
+        DB::table('tb_vista_personalizada')->insert([
+            'escritorio' => 1,
+            'documentacion' => 1,
+            'administracion' => 1,
+            'conceptosCif' => 1,
+            'materiales' => 1,
+            'productos' => 1,
+            'produccion' => 1,
+            'kardex' => 1,
+            'manoDeObra' => 1,
+            'personas' => 1,
+            'nomina' => 1,
+            'gestionFinanciera' => 1,
+            'idUser' => 10
+        ]);
+
+        DB::table('tb_vista_personalizada')->insert([
+            'escritorio' => 1,
+            'documentacion' => 1,
+            'administracion' => 1,
+            'conceptosCif' => 1,
+            'materiales' => 1,
+            'productos' => 1,
+            'produccion' => 1,
+            'kardex' => 1,
+            'manoDeObra' => 1,
+            'personas' => 1,
+            'nomina' => 1,
+            'gestionFinanciera' => 1,
+            'idUser' => 11
+        ]);
+
+        DB::table('tb_vista_personalizada')->insert([
+            'escritorio' => 1,
+            'documentacion' => 1,
+            'administracion' => 1,
+            'conceptosCif' => 1,
+            'materiales' => 1,
+            'productos' => 1,
+            'produccion' => 1,
+            'kardex' => 1,
+            'manoDeObra' => 1,
+            'personas' => 1,
+            'nomina' => 1,
+            'gestionFinanciera' => 1,
+            'idUser' => 12
+        ]);
+
+        DB::table('tb_vista_personalizada')->insert([
+            'escritorio' => 1,
+            'documentacion' => 1,
+            'administracion' => 1,
+            'conceptosCif' => 1,
+            'materiales' => 1,
+            'productos' => 1,
+            'produccion' => 1,
+            'kardex' => 1,
+            'manoDeObra' => 1,
+            'personas' => 1,
+            'nomina' => 1,
+            'gestionFinanciera' => 1,
+            'idUser' => 13
+        ]);
+
+        DB::table('tb_vista_personalizada')->insert([
+            'escritorio' => 1,
+            'documentacion' => 1,
+            'administracion' => 1,
+            'conceptosCif' => 1,
+            'materiales' => 1,
+            'productos' => 1,
+            'produccion' => 1,
+            'kardex' => 1,
+            'manoDeObra' => 1,
+            'personas' => 1,
+            'nomina' => 1,
+            'gestionFinanciera' => 1,
+            'idUser' => 14
+        ]);
+
+        DB::table('tb_vista_personalizada')->insert([
+            'escritorio' => 1,
+            'documentacion' => 1,
+            'administracion' => 1,
+            'conceptosCif' => 1,
+            'materiales' => 1,
+            'productos' => 1,
+            'produccion' => 1,
+            'kardex' => 1,
+            'manoDeObra' => 1,
+            'personas' => 1,
+            'nomina' => 1,
+            'gestionFinanciera' => 1,
+            'idUser' => 15
+        ]);
     }
 }
