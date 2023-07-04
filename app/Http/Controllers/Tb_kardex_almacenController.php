@@ -143,16 +143,12 @@ class Tb_kardex_almacenController extends Controller
 
         //if(!$request->ajax()) return redirect('/');
         $ordenes = DB::table('tb_orden_produccion')
+        ->where('tb_orden_produccion.idEmpresa','=',$idEmpresa)
         ->select('tb_orden_produccion.id','tb_orden_produccion.consecutivo','tb_orden_produccion.fecha')
         ->whereIn('tb_orden_produccion.id', function($sub){
                                             //cambios multiempresa
-                                                foreach (Auth::user()->empresas as $empresa){
-                                                $idEmpresa=$empresa['id'];
-                                                }
-                                            //cambios multiempresa
                                             $sub->selectRaw('max(id)')
                                             ->from('tb_orden_produccion')
-                                            ->where('tb_orden_produccion.idEmpresa','=',$idEmpresa)
                                             ->groupBy('consecutivo');
                                             }
         )
@@ -174,8 +170,7 @@ class Tb_kardex_almacenController extends Controller
         $materiales = Tb_orden_produccion_detalle::join('tb_orden_produccion','tb_orden_produccion_detalle.idOrdenProduccion','=','tb_orden_produccion.id')
             ->join('tb_gestion_materia_prima','tb_orden_produccion_detalle.idGestionMateria','=','tb_gestion_materia_prima.id')
             ->select('tb_gestion_materia_prima.gestionMateria as producto','tb_gestion_materia_prima.idUnidadBase','tb_gestion_materia_prima.id')
-            ->where('tb_orden_produccion.idEmpresa','=',$idEmpresa)
-            ->where('tb_orden_produccion.consecutivo', '=', $identificador)
+            ->where('tb_orden_produccion_detalle.idOrdenProduccion', '=', $identificador)
             ->orderBy('tb_gestion_materia_prima.gestionMateria','asc')
             ->get();
 
