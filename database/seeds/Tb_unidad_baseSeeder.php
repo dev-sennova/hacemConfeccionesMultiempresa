@@ -24,32 +24,37 @@ class Tb_unidad_baseSeeder extends Seeder
         */
         DB::table('tb_unidad_base')->insert([
             'unidadBase' => 'dm2',
-            'idEmpresa' => '1'
+            'idEmpresa' => '4'
         ]);
 
         DB::table('tb_unidad_base')->insert([
             'unidadBase' => 'metro',
-            'idEmpresa' => '1'
+            'idEmpresa' => '4'
         ]);
 
         DB::table('tb_unidad_base')->insert([
-            'unidadBase' => 'Hoja',
-            'idEmpresa' => '1'
+            'unidadBase' => 'cm',
+            'idEmpresa' => '4'
         ]);
 
         DB::table('tb_unidad_base')->insert([
             'unidadBase' => 'Unidad',
-            'idEmpresa' => '1'
+            'idEmpresa' => '4'
         ]);
 
         DB::table('tb_unidad_base')->insert([
             'unidadBase' => 'Par',
-            'idEmpresa' => '1'
+            'idEmpresa' => '4'
         ]);
 
         DB::table('tb_unidad_base')->insert([
             'unidadBase' => 'ml',
-            'idEmpresa' => '1'
+            'idEmpresa' => '4'
+        ]);
+
+        DB::table('tb_unidad_base')->insert([
+            'unidadBase' => 'cm2',
+            'idEmpresa' => '4'
         ]);
     }
 }

@@ -19,7 +19,7 @@ class Tb_nominaSeeder extends Seeder
             'tipo' => '1',
             'observacion' => 'Nómina de prueba',
             'estado' => '1',
-            'idEmpresa' => '1'
+            'idEmpresa' => '4'
         ]);
     }
 }

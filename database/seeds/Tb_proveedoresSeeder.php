@@ -22,7 +22,7 @@ class Tb_proveedoresSeeder extends Seeder
             'direccion'   => 'Indeterminado',
             'correo'      => 'correo@correo.co',
             'estado'      => '1',
-            'idEmpresa' => '1'
+            'idEmpresa' => '4'
         ]);
     }
 }

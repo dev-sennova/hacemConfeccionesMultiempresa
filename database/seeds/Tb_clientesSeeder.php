@@ -22,7 +22,7 @@ class Tb_clientesSeeder extends Seeder
             'telefono'    => '22222',
             'correo'      => 'correo@correo.co',
             'estado'      => '1',
-            'idEmpresa' => '1'
+            'idEmpresa' => '4'
         ]);
     }
 }
