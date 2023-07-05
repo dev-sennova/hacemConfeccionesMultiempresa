@@ -176,7 +176,7 @@
                                             <input type="number" v-model="cantidad" class="form-control" placeholder="Dias">
                                             <span class="help-block">(*) Dias de labor</span>
                                         </div>
-
+                                        <input type="hidden" v-model="observacion" class="form-control" value="Dias laborados">
                                     </div>
 
                                     <div v-if="tipoModal==1 && flag==1 && tipologiasalario==2" class="form-group row">

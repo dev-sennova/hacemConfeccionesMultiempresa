@@ -146,7 +146,6 @@ class Tb_novedadesController extends Controller
         $identificador= $request->identificador;
 
         $extra = Tb_nomina::where('tb_nomina.id','=',$identificador)
-        ->where('tb_nomina.idEmpresa','=',$idEmpresa)
         ->get();
 
         foreach($extra as $extrar){
@@ -155,6 +154,7 @@ class Tb_novedadesController extends Controller
 
         $empleados = Tb_vinculaciones::join("tb_empleado","tb_vinculaciones.idEmpleado","=","tb_empleado.id")
         ->where('tb_vinculaciones.estado','=','1')
+        ->where('tb_vinculaciones.idEmpresa','=',$idEmpresa)
         ->where('tb_vinculaciones.tipoSalario','=',$tipoNomina)
         ->select('tb_empleado.id as idEmpleado','tb_vinculaciones.tipoSalario as tipoSalario',DB::raw("CONCAT(tb_empleado.nombre,'  ',tb_empleado.apellido) AS empleado"))
         ->orderBy('empleado','asc')->get();
@@ -282,7 +282,7 @@ class Tb_novedadesController extends Controller
         $baseSal='';
 
         $salarios = Tb_vinculaciones::first()
-        ->where('tb_nomina.idEmpresa','=',$idEmpresa)
+        ->where('tb_vinculaciones.idEmpresa','=',$idEmpresa)
         ->where('tb_vinculaciones.estado','=','1')
         ->where('tb_vinculaciones.idEmpleado','=',$idEmpleado)
         ->orderByDesc('tb_vinculaciones.id')
