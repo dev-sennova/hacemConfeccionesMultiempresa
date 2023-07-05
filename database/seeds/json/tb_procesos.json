@@ -1,5 +1,9 @@
 [
     {"id":"1", "proceso":"Armado", "idArea":"4", "estado":"1", "idEmpresa":"4"},
     {"id":"2", "proceso":"Corte", "idArea":"4", "estado":"1", "idEmpresa":"4"},
-    {"id":"3", "proceso":"Terminado", "idArea":"4", "estado":"1", "idEmpresa":"4"}
+    {"id":"3", "proceso":"Terminado", "idArea":"4", "estado":"1", "idEmpresa":"4"},
+    {"id":"4", "proceso":"Emplantillado", "idArea":"4", "estado":"1", "idEmpresa":"4"},
+    {"id":"5", "proceso":"Soladura", "idArea":"4", "estado":"1", "idEmpresa":"4"},
+    {"id":"6", "proceso":"Montaje", "idArea":"4", "estado":"1", "idEmpresa":"4"},
+    {"id":"7", "proceso":"Costura", "idArea":"4", "estado":"1", "idEmpresa":"4"}
 ]

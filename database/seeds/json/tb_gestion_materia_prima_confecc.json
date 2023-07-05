@@ -1,0 +1,16 @@
+[
+    {"id":"1","gestionMateria":"BOTON 18 líneas (11.5 mm) 4 OJOS","idUnidadBase":"4","precioBase":"80","idTipoMateria":"4","estado":"1","idEmpresa":"1"},
+    {"id":"2","gestionMateria":"CREMALLERA DE POLYESTER Y ESPIRAL","idUnidadBase":"4","precioBase":"500","idTipoMateria":"2","estado":"1","idEmpresa":"1"},
+    {"id":"3","gestionMateria":"GUATA","idUnidadBase":"2","precioBase":"6000","idTipoMateria":"2","estado":"1","idEmpresa":"1"},
+    {"id":"4","gestionMateria":"BOLSA","idUnidadBase":"4","precioBase":"150","idTipoMateria":"4","estado":"1","idEmpresa":"1"},
+    {"id":"5","gestionMateria":"ETIQUETA","idUnidadBase":"4","precioBase":"10","idTipoMateria":"4","estado":"1","idEmpresa":"1"},
+    {"id":"6","gestionMateria":"MARQUILLA","idUnidadBase":"4","precioBase":"10","idTipoMateria":"3","estado":"1","idEmpresa":"1"},
+    {"id":"7","gestionMateria":"ENTRETELA GRANULADA","idUnidadBase":"2","precioBase":"5800","idTipoMateria":"1","estado":"1","idEmpresa":"1"},
+    {"id":"8","gestionMateria":"HILO CALIBRE 120/HILAZA","idUnidadBase":"2","precioBase":"2.64","idTipoMateria":"4","estado":"1","idEmpresa":"1"},
+    {"id":"9","gestionMateria":"ELÁSTICO 4 CM","idUnidadBase":"2","precioBase":"500","idTipoMateria":"1","estado":"1","idEmpresa":"1"},
+    {"id":"10","gestionMateria":"CREMALLERA SEPARABLE","idUnidadBase":"4","precioBase":"2000","idTipoMateria":"1","estado":"1","idEmpresa":"1"},
+    {"id":"11","gestionMateria":"MICHIGAN","idUnidadBase":"2","precioBase":"6000","idTipoMateria":"1","estado":"1","idEmpresa":"1"},
+    {"id":"12","gestionMateria":"ORION","idUnidadBase":"2","precioBase":"21000","idTipoMateria":"1","estado":"1","idEmpresa":"1"},
+    {"id":"13","gestionMateria":"MATERIALES VESTIDO INFANTIL","idUnidadBase":"4","precioBase":"24970","idTipoMateria":"1","estado":"1","idEmpresa":"1"},
+    {"id":"14","gestionMateria":"MATERIALES BLUSA DE TIRAS","idUnidadBase":"4","precioBase":"9200","idTipoMateria":"1","estado":"1","idEmpresa":"1"}
+    ]

@@ -1,6 +1,10 @@
 [
     {"id":"1", "perfil":"Armador", "idProceso":"1", "valorMinuto":"1", "estado":"1"},
     {"id":"2", "perfil":"Cortador", "idProceso":"2", "valorMinuto":"1", "estado":"1"},
-    {"id":"3", "perfil":"Terminador", "idProceso":"3", "valorMinuto":"1", "estado":"1"}
+    {"id":"3", "perfil":"Terminador", "idProceso":"3", "valorMinuto":"1", "estado":"1"},
+    {"id":"4", "perfil":"Emplantillador", "idProceso":"4", "valorMinuto":"1", "estado":"1"},
+    {"id":"5", "perfil":"Solador", "idProceso":"5", "valorMinuto":"1", "estado":"1"},
+    {"id":"6", "perfil":"Montador", "idProceso":"6", "valorMinuto":"1", "estado":"1"},
+    {"id":"7", "perfil":"Costurero", "idProceso":"7", "valorMinuto":"1", "estado":"1"}
 ]
 
