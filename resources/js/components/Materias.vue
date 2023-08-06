@@ -20,7 +20,7 @@
                                 <div class="col-md-9">
                                     <div class="input-group">
                                         <select class="form-control col-md-3" v-model="criterio">
-                                        <option value="id">Id</option>    
+                                        <option value="id">Id</option>
                                         <option value="tipoMateria">Clasificación</option>
                                         </select>
                                         <input type="text" v-model="buscar" @keyup.enter="listarMateria(1,buscar,criterio)" class="form-control" placeholder="Texto a buscar">
@@ -102,7 +102,7 @@
                                     <div class="form-group row">
                                         <label class="col-md-3 form-control-label" for="text-input">Nombre</label>
                                         <div class="col-md-9">
-                                            <input type="text" v-model="tipoMateria" class="form-control" placeholder="Nombre de materia">
+                                            <input type="text" v-model="tipoMateria" class="form-control" placeholder="Nombre de clasificación">
                                             <span class="help-block">(*) Ingrese el nombre de la clasificación</span>
                                         </div>
                                     </div>

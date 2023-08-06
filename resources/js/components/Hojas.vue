@@ -628,7 +628,7 @@
                             this.idMateriaPrima=data['idGestionMateria'];
                             this.gestionMateria=data['gestionMateria'];
                             this.cantidad=data['cantidad'];
-                            this.precio=data['precioBase'];
+                            this.precio=this.precioBase;
                             this.tipoDeCosto=data['tipoDeCosto'];
                             this.idHoja=this.identificador;
                             this.tituloModal='Editar materia prima';
