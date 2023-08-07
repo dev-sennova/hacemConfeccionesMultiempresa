@@ -667,6 +667,7 @@
                             this.idHoja=this.identificador;
                             this.idArea=this.identificadorArea;
                             this.tituloModal='Editar mano de obra';
+                            this.valor=data['valorMinuto'];
                             this.tipoAccion= 2;
                             this.selectRelacion(this.idArea);
                             this.selectRelacionPerfil(this.idProceso);
