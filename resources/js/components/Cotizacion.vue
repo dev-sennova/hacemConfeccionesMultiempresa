@@ -149,8 +149,8 @@
                                     <div v-if="tipoModal==1" class="form-group row">
                                         <label class="col-md-3 form-control-label" for="text-input">Vigencia</label>
                                         <div class="col-md-9">
-                                            <input type="text" v-model="vigencia" class="form-control" placeholder="Vigencia">
-                                            <span class="help-block">(*) Ingrese la Vigencia</span>
+                                            <input type="number" v-model="vigencia" class="form-control" placeholder="Vigencia">
+                                            <span class="help-block">(*) Ingrese la Vigencia en número de dias</span>
                                         </div>
                                     </div>
                                     <div v-if="tipoModal==1" class="form-group row">

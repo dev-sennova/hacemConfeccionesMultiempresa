@@ -8,7 +8,6 @@ use App\Tb_area;
 use App\Tb_proceso;
 use App\Tb_empleado;
 use App\Tb_administradora_pensiones;
-use App\Tb_porcentaje_riesgo;
 use App\Tb_eps;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -44,7 +43,7 @@ class Tb_empleadoController extends Controller
             ->where('tb_empleado.idEmpresa','=',$idEmpresa)
             ->select('tb_empleado.id','tb_empleado.documento','tb_empleado.nombre','tb_empleado.apellido','tb_empleado.direccion','tb_empleado.telefono',
             'tb_empleado.correo','tb_empleado.idPerfil','tb_empleado.genero','tb_empleado.estado as estado','tb_perfil.perfil','tb_perfil.idProceso',
-            'tb_proceso.proceso','tb_proceso.idArea','tb_area.area','tb_empleado.tipoSangre','tb_empleado.enfermedades')
+            'tb_proceso.proceso','tb_proceso.idArea','tb_area.area','tb_empleado.tipoSangre','tb_empleado.enfermedades','tb_empleado.contacto','tb_empleado.telefonocontacto')
             ->orderBy('tb_empleado.id','desc')->paginate(5);
         }
         else if($criterio=='perfil'){
@@ -56,7 +55,7 @@ class Tb_empleadoController extends Controller
             ->where('tb_empleado.idEmpresa','=',$idEmpresa)
             ->select('tb_empleado.id','tb_empleado.documento','tb_empleado.nombre','tb_empleado.apellido','tb_empleado.direccion','tb_empleado.telefono',
             'tb_empleado.correo','tb_empleado.idPerfil','tb_empleado.genero','tb_empleado.estado as estado','tb_perfil.perfil','tb_perfil.idProceso',
-            'tb_proceso.proceso','tb_proceso.idArea','tb_area.area','tb_empleado.tipoSangre','tb_empleado.enfermedades')
+            'tb_proceso.proceso','tb_proceso.idArea','tb_area.area','tb_empleado.tipoSangre','tb_empleado.enfermedades','tb_empleado.contacto','tb_empleado.telefonocontacto')
             ->where('tb_perfil.perfil', 'like', '%'. $buscar . '%')
             ->orderBy('tb_empleado.id','desc')->paginate(5);
         }
@@ -69,7 +68,7 @@ class Tb_empleadoController extends Controller
             ->where('tb_empleado.idEmpresa','=',$idEmpresa)
             ->select('tb_empleado.id','tb_empleado.documento','tb_empleado.nombre','tb_empleado.apellido','tb_empleado.direccion','tb_empleado.telefono',
             'tb_empleado.correo','tb_empleado.idPerfil','tb_empleado.genero','tb_empleado.estado as estado','tb_perfil.perfil','tb_perfil.idProceso',
-            'tb_proceso.proceso','tb_proceso.idArea','tb_area.area','tb_empleado.tipoSangre','tb_empleado.enfermedades')
+            'tb_proceso.proceso','tb_proceso.idArea','tb_area.area','tb_empleado.tipoSangre','tb_empleado.enfermedades','tb_empleado.contacto','tb_empleado.telefonocontacto')
             ->where('tb_perfil.perfil', 'like', '%'. $buscar . '%')
             ->orderBy('tb_empleado.id','desc')->paginate(5);
         }
@@ -159,12 +158,12 @@ class Tb_empleadoController extends Controller
 
         $buscar= $request->id;
         $detalleempleados = Tb_empleado::join("tb_vinculaciones","tb_empleado.id","=","tb_vinculaciones.idEmpleado")
-        ->join("tb_porcentaje_riesgo","tb_vinculaciones.idNivelArl","=","tb_porcentaje_riesgo.id")
+        ->join("tb_niveles_riesgo","tb_vinculaciones.idNivelArl","=","tb_niveles_riesgo.id")
         ->where('tb_empleado.idEmpresa','=',$idEmpresa)
         ->where('tb_empleado.id','=',$buscar)
         ->where('tb_vinculaciones.estado','=','1')
         ->select('tb_empleado.id as id','tb_empleado.nombre','tb_empleado.apellido','tb_empleado.direccion','tb_vinculaciones.tipocontrato',
-        'tb_vinculaciones.tiposalario','tb_vinculaciones.salarioBasicoMensual','tb_vinculaciones.fechainicio','tb_porcentaje_riesgo.nivel')
+        'tb_vinculaciones.tiposalario','tb_vinculaciones.salarioBasicoMensual','tb_vinculaciones.fechainicio','tb_niveles_riesgo.nivelArl')
         ->orderBy('tb_empleado.id','asc')->get();
         return ['vinculacionempleados' => $detalleempleados];
     }

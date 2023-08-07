@@ -213,7 +213,7 @@
                                                         <td v-else-if="vinculacionempleado.tipocontrato==2">Término indefinido</td>
                                                         <td v-if="vinculacionempleado.tiposalario">Sueldo fijo</td>
                                                         <td v-else-if="vinculacionempleado.tiposalario==2">Destajo</td>
-                                                        <td v-text="vinculacionempleado.nivel"></td>
+                                                        <td v-text="vinculacionempleado.nivelArl"></td>
                                                         <td v-text="vinculacionempleado.salarioBasicoMensual"></td>
                                                         <td v-text="vinculacionempleado.fechainicio"></td>
                                                     </tr>
@@ -482,6 +482,7 @@
             listarEmpleado(page,buscar,criterio){
                 let me=this;
                 var url='/empleado?page=' + page + '&buscar=' + buscar + '&criterio=' + criterio;
+                console.log(url);
                 axios.get(url).then(function (response) {
                 var respuesta=response.data;
                 me.arrayEmpleados=respuesta.empleados.data;
@@ -779,7 +780,6 @@
                 if (!this.telefono) this.errorMensaje.push("El Telefono no puede estar vacio");
                 if (this.telefono<0) this.errorMensaje.push("El Telefono puede ser negativo");
                 if (!this.correo) this.errorMensaje.push("El Correo no puede estar vacio");
-                if (!this.tipoSangre) this.errorMensaje.push("El contacto no puede estar vacio");
                 if (!this.enfermedades) this.errorMensaje.push("El telefono de contacto no puede estar vacio");
                 if (!this.tipoSangre) this.errorMensaje.push("El tipo de sangre no puede estar vacio");
                 if (!this.enfermedades) this.errorMensaje.push("Las enfermedades no pueden estar vacias");
@@ -834,7 +834,7 @@
                             this.idEmpleado=data['id'];
                             this.documento=data['documento'];
                             this.idArea=data['idArea'];
-                            this.proceso=data['proceso']; //añadido para alimentar el select
+                            this.idProceso=data['idProceso']; //añadido para alimentar el select
                             this.idPerfil=data['idPerfil'];
                             this.nombre=data['nombre'];
                             this.apellido=data['apellido'];
