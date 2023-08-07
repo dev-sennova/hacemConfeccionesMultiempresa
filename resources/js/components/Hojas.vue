@@ -843,6 +843,8 @@
                     return;
                 }
 
+                //this.valor=data['valorMinuto'];
+
                 if(this.flag==1) {
                 this.tipoPago=1;
                 this.tiempo=this.tiempo;
