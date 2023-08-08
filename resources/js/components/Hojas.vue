@@ -659,6 +659,7 @@
                             console.log(data);
                             this.modal=1;
                             this.tipoModal=2;
+                            this.valor=data['valorMinuto'];
                             this.idManoDeObraProducto=data['id'];
                             this.idPerfil=data['idPerfil'];
                             this.idProceso=data['idProceso'];
