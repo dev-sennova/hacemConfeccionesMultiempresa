@@ -267,6 +267,7 @@
                     'idTiempoEstandar':this.identificador
                 }).then(function (response) {
                 me.clear();
+                swalWithBootstrapButtons.fire('Registro realizado!');
                 me.listarPds(1,this.identificador);
                 me.forceRerender();
                 })

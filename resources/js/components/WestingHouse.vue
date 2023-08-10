@@ -233,6 +233,7 @@
                     'idTiempoEstandar':this.identificador
                 }).then(function (response) {
                 me.clear();
+                swalWithBootstrapButtons.fire('Registro realizado!');
                 me.listarWesting(1,this.identificador);
                 me.forceRerender();
                 })
