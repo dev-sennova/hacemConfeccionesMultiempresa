@@ -15,12 +15,12 @@ class CreateTbLiquidezTable extends Migration
     {
         Schema::create('tb_liquidez', function (Blueprint $table) {
             $table->id();
-            $table->integer('activocorriente')->unsigned();
-            $table->integer('pasivocorriente')->unsigned();
+            $table->bigInteger('activocorriente')->unsigned();
+            $table->bigInteger('pasivocorriente')->unsigned();
             $table->float('razoncorriente');
-            $table->integer('capitaldetrabajo')->unsigned();
-            $table->integer('inventario')->unsigned();
-            $table->float('pruebaacida');
+            $table->bigInteger('capitaldetrabajo')->unsigned();
+            $table->bigInteger('inventario')->unsigned();
+            $table->double('pruebaacida', 12, 2);
             $table->string('detalle', 255);
             $table->foreignId('idEmpresa')->constrained('tb_configuracion_basica');
             //$table->timestamps();

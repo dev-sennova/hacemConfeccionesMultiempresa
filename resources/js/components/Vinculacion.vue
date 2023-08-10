@@ -326,6 +326,7 @@
                 salarioBasicoMensual:0,
                 id:'',
                 fechaInicio:'',
+                fechaFin:'',
                 estado:'',
                 arrayVinculaciones : [],
                 arrayVinculacionesInactivas : [],
@@ -524,7 +525,7 @@
                     let me=this;
                     axios.put('/vinculacion/deactivate',{
                         'id': id,
-                        'fechaFin': fechaFin
+                        'fechaFin': this.fechaFin
                     }).then(function (response) {
                     me.listarVinculacion(1,'','vinculacion');
                     this.listarVinculacionInactiva(1,'','');

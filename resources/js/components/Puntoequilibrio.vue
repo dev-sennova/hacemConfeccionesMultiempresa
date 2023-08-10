@@ -37,7 +37,7 @@
                                 <thead>
                                     <tr>
                                         <th>Detalle</th>
-                                        <th>Precio de venta</th>   
+                                        <th>Precio de venta</th>
                                         <th>Punto de equilibrio</th>
                                     </tr>
                                 </thead>
@@ -142,7 +142,7 @@
 
                                     <div class="form-group row">
                                         <div class="col-md-6">
-                                            <label for="puntoequilibriopesos">Costo unitario: {{ parseInt(materiaprima)+parseInt(manodeobradirecta)}}</label>
+                                            <label for="puntoequilibriopesos">Costo variable unitario: {{ parseInt(materiaprima)+parseInt(manodeobradirecta)}}</label>
                                         </div>
                                     </div>
 
@@ -339,14 +339,14 @@
                     // handle error
                     console.log(error);
                 })
-            },       
+            },
             cambiarPagina(page){
                 let me = this;
                 //Actualiza la pagina actual
                 me.pagination.current_page = page;
                 //envia peticion para ver los valores asociados a esa pagina
                 me.listarPrecios(page);
-            },    
+            },
             listarPosibles(id){
                 let me=this;
                 //var url='/relaf/posibles?id=' + this.identificador;

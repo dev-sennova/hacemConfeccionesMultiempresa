@@ -81,23 +81,24 @@ class Tb_vinculacionesController extends Controller
             ->join("tb_eps","tb_empleado.idEps","=","tb_eps.id")
             ->join("tb_administradora_pensiones","tb_empleado.idPensiones","=","tb_administradora_pensiones.id")
             ->where('tb_vinculaciones.idEmpresa','=',$idEmpresa)
+            ->where('tb_vinculaciones.estado','=','0')
             ->select('tb_vinculaciones.id','tb_vinculaciones.tipoContrato','tb_vinculaciones.tipoSalario','tb_vinculaciones.salarioBasicoMensual',
             'tb_vinculaciones.fechaInicio','tb_vinculaciones.tiempoContrato','tb_vinculaciones.fechaFin','tb_vinculaciones.idEmpleado','tb_vinculaciones.idNivelArl',
             'tb_empleado.idEps','tb_empleado.idPensiones','tb_vinculaciones.estado','tb_eps.nombreEps','tb_administradora_pensiones.nombrePensiones',
             DB::raw("CONCAT(tb_empleado.nombre,'  ',tb_empleado.apellido) AS empleado"))
             ->orderBy('tb_vinculaciones.id','desc')
-            ->where('tb_vinculaciones.estado','=','0')->paginate(5);
+            ->paginate(5);
         }
         else {
             $vinculaciones = Tb_vinculaciones::join("tb_empleado","tb_vinculaciones.idEmpleado","=","tb_empleado.id")
             ->join("tb_eps","tb_empleado.idEps","=","tb_eps.id")
             ->join("tb_administradora_pensiones","tb_empleado.idPensiones","=","tb_administradora_pensiones.id")
             ->where('tb_vinculaciones.idEmpresa','=',$idEmpresa)
+            ->where('tb_vinculaciones.estado','=','0')
             ->select('tb_vinculaciones.id','tb_vinculaciones.tipoContrato','tb_vinculaciones.tipoSalario','tb_vinculaciones.salarioBasicoMensual',
             'tb_vinculaciones.fechaInicio','tb_vinculaciones.tiempoContrato','tb_vinculaciones.fechaFin','tb_vinculaciones.idEmpleado','tb_vinculaciones.idNivelArl',
             'tb_empleado.idEps','tb_empleado.idPensiones','tb_vinculaciones.estado','tb_eps.nombreEps','tb_administradora_pensiones.nombrePensiones',
             DB::raw("CONCAT(tb_empleado.nombre,'  ',tb_empleado.apellido) AS empleado"))
-            ->where('tb_vinculaciones.estado','=','0')
             ->where($criterio, 'like', '%'. $buscar . '%')->orderBy('id','desc')->paginate(5);
         }
 
