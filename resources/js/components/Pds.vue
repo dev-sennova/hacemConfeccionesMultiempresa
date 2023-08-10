@@ -266,10 +266,10 @@
                     'valorEspera':this.valorEspera,
                     'idTiempoEstandar':this.identificador
                 }).then(function (response) {
+                Swal.fire('Registro realizado!');
                 me.clear();
-                swalWithBootstrapButtons.fire('Registro realizado!');
-                me.listarPds(1,this.identificador);
                 me.forceRerender();
+                me.listarPds(1,this.identificador);
                 })
                 .catch(function (error) {
                     console.log(error);

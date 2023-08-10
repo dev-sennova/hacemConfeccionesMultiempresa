@@ -232,10 +232,10 @@
                     'idConsistencia':this.idConsistencia,
                     'idTiempoEstandar':this.identificador
                 }).then(function (response) {
+                Swal.fire('Registro realizado!');
                 me.clear();
-                swalWithBootstrapButtons.fire('Registro realizado!');
-                me.listarWesting(1,this.identificador);
                 me.forceRerender();
+                me.listarWesting(1,this.identificador);
                 })
                 .catch(function (error) {
                     console.log(error);
