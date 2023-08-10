@@ -232,9 +232,9 @@
                     'idConsistencia':this.idConsistencia,
                     'idTiempoEstandar':this.identificador
                 }).then(function (response) {
-                me.clear();    
+                me.clear();
                 me.listarWesting(1,this.identificador);
-                me.forceRender();
+                me.forceRerender();
                 })
                 .catch(function (error) {
                     console.log(error);

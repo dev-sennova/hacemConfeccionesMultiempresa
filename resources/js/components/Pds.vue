@@ -180,7 +180,7 @@
                     // handle success
                 var respuesta=response.data;
                 me.arrayEsfuerzoMental=respuesta.esfuerzomental;
-                me.forceRender();
+                me.forceRerender();
                     //console.log(response);
                 })
                 .catch(function (error) {
@@ -196,7 +196,7 @@
                     // handle success
                 var respuesta=response.data;
                 me.arrayEsfuerzoFisico=respuesta.esfuerzofisico;
-                me.forceRender();
+                me.forceRerender();
                     //console.log(response);
                 })
                 .catch(function (error) {
@@ -212,7 +212,7 @@
                     // handle success
                 var respuesta=response.data;
                 me.arraySuplementarios=respuesta.suplementarios;
-                me.forceRender();
+                me.forceRerender();
                     //console.log(response);
                 })
                 .catch(function (error) {
@@ -228,7 +228,7 @@
                     // handle success
                 var respuesta=response.data;
                 me.arrayPersonales=respuesta.personales;
-                me.forceRender();
+                me.forceRerender();
                     //console.log(response);
                 })
                 .catch(function (error) {
@@ -244,7 +244,7 @@
                     // handle success
                 var respuesta=response.data;
                 me.arrayEspera=respuesta.espera;
-                me.forceRender();
+                me.forceRerender();
                     //console.log(response);
                 })
                 .catch(function (error) {
@@ -266,9 +266,9 @@
                     'valorEspera':this.valorEspera,
                     'idTiempoEstandar':this.identificador
                 }).then(function (response) {
-                me.clear();    
+                me.clear();
                 me.listarPds(1,this.identificador);
-                me.forceRender();
+                me.forceRerender();
                 })
                 .catch(function (error) {
                     console.log(error);
