@@ -18,12 +18,12 @@ class CreateTbRotacioncarteraTable extends Migration
             $table->date('fechainicial');
             $table->date('fechafinal');
             $table->integer('tipoperiodo')->unsigned();
-            $table->integer('saldoperiodoactual')->unsigned();
-            $table->integer('saldoperiodoanterior')->unsigned();
-            $table->integer('costodeventas')->unsigned();
-            $table->integer('sumasaldos')->unsigned();
-            $table->float('promediosaldos');
-            $table->float('rotacioncartera');
+            $table->bigInteger('saldoperiodoactual')->unsigned();
+            $table->bigInteger('saldoperiodoanterior')->unsigned();
+            $table->bigInteger('costodeventas')->unsigned();
+            $table->bigInteger('sumasaldos')->unsigned();
+            $table->double('promediosaldos', 12, 2);
+            $table->double('rotacioncartera', 12, 2);
             $table->string('detalle', 255);
             $table->foreignId('idEmpresa')->constrained('tb_configuracion_basica');
             //$table->timestamps();

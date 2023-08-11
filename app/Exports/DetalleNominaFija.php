@@ -23,7 +23,7 @@ use Maatwebsite\Excel\Concerns\WithStrictNullComparison;
 class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,ShouldAutoSize,WithDrawings,WithStrictNullComparison,WithTitle
 {
     use Exportable;
-    
+
     private $date;
     private $idNomina;
 
@@ -130,6 +130,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
          'tb_resumen_nomina.aportePension','tb_resumen_nomina.aporteArl','tb_resumen_nomina.aporteSena','tb_resumen_nomina.aporteIcbf','tb_resumen_nomina.aporteCaja','tb_resumen_nomina.cesantias','tb_resumen_nomina.interesesCesantias','tb_resumen_nomina.primaServicios',
          'tb_resumen_nomina.vacaciones','tb_resumen_nomina.costoTotalMensual',
          DB::raw('CONCAT(tb_empleado.nombre," ",tb_empleado.apellido) as nombreEmpleado'))
+         ->where('tb_resumen_nomina.idNomina',"=",$this->idNomina)
          ->orderBy('id','asc')
          ->get();
         }
@@ -149,6 +150,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
             'tb_resumen_nomina.aportePension','tb_resumen_nomina.aporteArl','tb_resumen_nomina.aporteSena','tb_resumen_nomina.aporteIcbf','tb_resumen_nomina.aporteCaja','tb_resumen_nomina.cesantias','tb_resumen_nomina.interesesCesantias','tb_resumen_nomina.primaServicios',
             'tb_resumen_nomina.vacaciones','tb_resumen_nomina.costoTotalMensual',
             DB::raw('CONCAT(tb_empleado.nombre," ",tb_empleado.apellido) as nombreEmpleado'))
+            ->where('tb_resumen_nomina.idNomina',"=",$this->idNomina)
             ->orderBy('id','asc')
             ->get();
         }
@@ -165,15 +167,15 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                 $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setBold(true);
 
                 $cellRange2 = 'D2';
-                $event->sheet->getDelegate()->setCellValue('D2', '2021')->getStyle($cellRange2)->getFont()->setSize(11);
+                $event->sheet->getDelegate()->setCellValue('D2', '2023')->getStyle($cellRange2)->getFont()->setSize(11);
                 $event->sheet->getDelegate()->getStyle($cellRange2)->getFont()->setBold(true);
-                
+
                 $cellRange_1 = 'C4';
                 $event->sheet->getDelegate()->setCellValue('C4', 'SALARIO MINIMO')->getStyle($cellRange_1)->getFont()->setSize(11);
                 $event->sheet->getDelegate()->getStyle($cellRange_1)->getFont()->setBold(true);
 
                 $cellRange_2 = 'D4';
-                $event->sheet->getDelegate()->setCellValue('D4', '$ 908,526')->getStyle($cellRange_2)->getFont()->setSize(11);
+                $event->sheet->getDelegate()->setCellValue('D4', '$ 1,160,000')->getStyle($cellRange_2)->getFont()->setSize(11);
                 $event->sheet->getDelegate()->getStyle($cellRange_2)->getFont()->setBold(true);
 
                 $cellRange_3 = 'C5';
@@ -181,7 +183,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                 $event->sheet->getDelegate()->getStyle($cellRange_3)->getFont()->setBold(true);
 
                 $cellRange_4 = 'D5';
-                $event->sheet->getDelegate()->setCellValue('D5', '$ 106,454')->getStyle($cellRange_4)->getFont()->setSize(11);
+                $event->sheet->getDelegate()->setCellValue('D5', '$ 140,606')->getStyle($cellRange_4)->getFont()->setSize(11);
                 $event->sheet->getDelegate()->getStyle($cellRange_4)->getFont()->setBold(true);
 
                 $cellRange3 = 'A7:G10';
@@ -192,7 +194,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                 $event->sheet->getDelegate()->getStyle($cellRange3)->getFill()
                 ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
                 ->getStartColor()->setARGB('FFFFFF');
-                
+
                 $cellRange4 = 'H7:BD7';
                 $event->sheet->getDelegate()->mergeCells('H7:BD7');
                 $event->sheet->getDelegate()->getStyle('H7:BD7')->getAlignment()
@@ -243,7 +245,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                 $event->sheet->getDelegate()->getStyle($cellRange9)->getFill()
                 ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
                 ->getStartColor()->setARGB('CBF4F1');
-                 
+
                 $cellRange10 = 'I11:AH12';
                 $event->sheet->getDelegate()->mergeCells('I11:AH12');
                 $event->sheet->getDelegate()->getStyle('I11:AH12')->getAlignment()
@@ -359,7 +361,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                 $event->sheet->getDelegate()->setCellValue('J14', 'Días Laborados')->getStyle($cellRange13)->getFont()->setSize(11)->setBold(true);
                 $event->sheet->getDelegate()->getStyle($cellRange13)->getFill()
                 ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-                ->getStartColor()->setARGB('F2E1B8'); 
+                ->getStartColor()->setARGB('F2E1B8');
 
                 $cellRangeA13 = 'J15';
                 $event->sheet->getDelegate()->setCellValue('J15', 'CANT.')->getStyle($cellRangeA13)->getFont()->setSize(10)->setBold(false);
@@ -507,7 +509,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('A7:G10','thin')->applyFromArray($styleArray);
 
                 $styleArray1 = [
@@ -518,7 +520,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('H7:BD10','thin')->applyFromArray($styleArray1);
 
                 $styleArray2 = [
@@ -529,7 +531,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('A11:H12','thin')->applyFromArray($styleArray2);
 
                 $styleArray3 = [
@@ -540,7 +542,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('I11:BD12','thin')->applyFromArray($styleArray3);
 
                 $styleArray4 = [
@@ -551,7 +553,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('A13:H15','thin')->applyFromArray($styleArray4);
 
                 $styleArray5 = [
@@ -562,7 +564,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('I11:AH15','thin')->applyFromArray($styleArray5);
 
                 $styleArray6 = [
@@ -573,7 +575,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('AI11:AJ15','thin')->applyFromArray($styleArray6);
 
                 $styleArray7 = [
@@ -584,7 +586,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('AK11:AR15','thin')->applyFromArray($styleArray7);
 
                 $styleArray8 = [
@@ -595,7 +597,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('AS11:AS15','thin')->applyFromArray($styleArray8);
 
                 $styleArray9 = [
@@ -606,7 +608,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('AT11:AY15','thin')->applyFromArray($styleArray9);
 
                 $styleArray10 = [
@@ -617,7 +619,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('AT11:AY15','thin')->applyFromArray($styleArray10);
 
                 $styleArray11 = [
@@ -628,7 +630,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('AZ11:BC15','thin')->applyFromArray($styleArray11);
 
                 $styleArray12 = [
@@ -639,7 +641,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('BD11:BD15','thin')->applyFromArray($styleArray12);
 
                 $styleArray13 = [
@@ -650,7 +652,7 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('C2:D2','thin')->applyFromArray($styleArray13);
 
                 $styleArray14 = [
@@ -661,19 +663,19 @@ class DetalleNominaFija implements FromCollection,WithHeadings,WithEvents,Should
                         ],
                     ],
                 ];
-                
+
                 $event->sheet->getStyle('C4:E5','thin')->applyFromArray($styleArray14);
             },
         ];
     }
    public function autoFitColumnWidthToContent($sheet, $fromCol, $toCol) { if (empty($toCol) ) {
-           
+
         $toCol = $sheet->getColumnDimension($sheet->getHighestColumn())->getColumnIndex();
-        } 
-        for($i = $fromCol; $i <= $toCol; $i++) { 
-            $sheet->getColumnDimension($i)->setAutoSize(true); 
+        }
+        for($i = $fromCol; $i <= $toCol; $i++) {
+            $sheet->getColumnDimension($i)->setAutoSize(true);
            }
-           $sheet->calculateColumnWidths(); 
+           $sheet->calculateColumnWidths();
        }
 
    public function drawings()

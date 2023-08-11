@@ -145,6 +145,7 @@ class Tb_kardex_almacenController extends Controller
         $ordenes = DB::table('tb_orden_produccion')
         ->where('tb_orden_produccion.idEmpresa','=',$idEmpresa)
         ->select('tb_orden_produccion.id','tb_orden_produccion.consecutivo','tb_orden_produccion.fecha')
+        ->whereIn('tb_orden_produccion.id', function($sub){$sub->selectRaw('max(id)')->from('tb_orden_produccion')->groupBy('tb_orden_produccion.consecutivo');})
         ->orderBy('tb_orden_produccion.id','desc')
         ->get();
 
